@@ -1,0 +1,4 @@
+appserver:
+  build: appserver/
+  command: /totvs11/microsiga/protheus/bin/appserver/appsrvlinux
+  volume: /totvs11/microsiga/protheus_data

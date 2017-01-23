@@ -1,6 +1,6 @@
 USER = endersonmaia
 NAME = $(USER)/totvs-appserver64
-VERSION = 700131227A-16-12-15
+VERSION = 16-12-15-700131227A
 
 .PHONY: all build tag_latest release
 

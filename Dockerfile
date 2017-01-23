@@ -1,17 +1,19 @@
-FROM centos:7.2.1511
+FROM centos:7.3.1611
 
-MAINTAINER Enderson Maia <endersonmaia@gmail.com>
+LABEL maintainer "Enderson Maia <endersonmaia@gmail.com>"
 
 RUN yum -y update && rm -rf /var/cache/yum/* && yum clean all
 
 RUN yum -y update \
-    && yum -y install glibc.i686 \
+    && yum -y install unzip dmidecode \
     && rm -rf /var/cache/yum/* \
     && yum clean all
 
-ADD totvs11-rootfs.tgz /
-COPY /build/docker-entrypoint.sh /
-COPY /build/appserver.ini /totvs11/microsiga/protheus/bin/appserver/appserver.ini
+COPY /build /build
+
+COPY 16-12-15-P11_APPSERVER_LINUX_X64.ZIP /build/
+
+RUN /build/setup.sh
 
 EXPOSE 1100
 

@@ -1,4 +1,16 @@
-appserver:
-  build: appserver/
-  command: /totvs11/microsiga/protheus/bin/appserver/appsrvlinux
-  volume: /totvs11/microsiga/protheus_data
+version: '2'
+
+services:
+
+  appserver:
+    build: .
+    ports:
+      - "1100:1100"
+    user: root
+    environment:
+      - DBACCESS_SERVER=${DBACCESS_SERVER}
+      - DBACCESS_ALIAS=${DBACCESS_ALIAS}
+      - DBACCESS_PORT=${DBACCESS_PORT}
+    volumes:
+      - ${PROTHEUS_DATA_PATH}:/totvs11/microsiga/protheus_data
+      - ${PROTHEUS_APO_PATH}:/totvs11/microsiga/protheus/apo

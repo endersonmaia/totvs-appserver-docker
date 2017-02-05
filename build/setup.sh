@@ -6,7 +6,7 @@ TOTVS_PATH=/totvs11/microsiga
 
 mkdir -p $TOTVS_PATH/protheus/{apo,bin/appserver}
 
-unzip -j /build/16-12-15-P11_APPSERVER_LINUX_X64.ZIP "appserverLinux_x64/*" -d $TOTVS_PATH/protheus/bin/appserver/
+unzip -j /build/17-01-11-P12_BINARIO_LINUX.ZIP "appserverLinux/*" -d $TOTVS_PATH/protheus/bin/appserver/
 
 cd $TOTVS_PATH/protheus/bin/appserver/
 

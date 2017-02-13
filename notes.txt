@@ -27,3 +27,20 @@
   * updates
   * etc
   
+  
+  ulimit -n 32768
+  ulimit -s 1024
+  ulimit -m 2048000
+  ulimit -v 2048000
+  
+  
+  $ ./appsrvlinux --help
+
+    opcao --help invalida!
+
+    -daemon:                       executa em background
+    -log_server:                   executa como servidor de logs
+    -balance_smart_client_desktop: executa como proxy para smart client desktop
+    -balance_html:                 executa como proxy para html
+    -balance_telnet:               executa como proxy telnet
+    -balance_web_services:         executa como proxy web services

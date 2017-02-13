@@ -10,14 +10,14 @@ unzip -j /build/17-02-07-P12_BINARIO_LINUX.ZIP "appserverLinux/*" -d $TOTVS_PATH
 
 cd $TOTVS_PATH/protheus/bin/appserver/
 
-for file in $(ls *.tar.gz); do 
+for file in $(ls *.tar.gz); do
   tar -xvzf $file -C ./
   rm -vf $file;
 done
 
 chmod 777 $TOTVS_PATH/protheus/bin/appserver/*.so
 
-cp /build/docker-entrypoint.sh /
+cp /build/my-init.sh /usr/local/bin/my-init.sh
 cp /build/appserver.ini $TOTVS_PATH/protheus/bin/appserver/
 
 rm -rf /build

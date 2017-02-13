@@ -11,15 +11,15 @@ RUN yum -y update \
 
 COPY /build /build
 
-COPY 17-01-11-P12_BINARIO_LINUX.ZIP /build/
+COPY 17-02-07-P12_BINARIO_LINUX.ZIP /build/
 
 RUN /build/setup.sh
 
-EXPOSE 1100
+EXPOSE 1234
 
-VOLUME ["/totvs11/microsiga/protheus_data", "/totvs11/microsiga/protheus/apo/"]
+VOLUME ["/totvs12/microsiga/protheus_data", "/totvs12/microsiga/protheus/apo/"]
 
-WORKDIR /totvs11/microsiga/protheus/bin/appserver
+WORKDIR /totvs12/microsiga/protheus/bin/appserver
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 

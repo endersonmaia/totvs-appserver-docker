@@ -3,7 +3,15 @@ FROM centos:7.3.1611
 LABEL maintainer "Enderson Maia <endersonmaia@gmail.com>"
 
 RUN yum -y update \
-    && yum -y install glibc.i686 libstdc++.i686 libuuid.i686 unzip dmidecode wget \
+    && yum -y install \
+        dmidecode \
+        fontconfig.i686 \
+        glib2.i686 \
+        glibc.i686 \
+        libstdc++.i686 \
+        libuuid.i686 \
+        unzip \
+        wget \
     && rm -rf /var/cache/yum/* \
     && yum clean all
 
@@ -12,7 +20,7 @@ RUN chmod +x /usr/bin/dumb-init
 
 COPY /build /build
 
-COPY 17-02-07-P12_BINARIO_LINUX.ZIP /build/
+COPY 18-01-24-P12-APPSERVER_LINUX.ZIP /build/
 
 RUN /build/setup.sh
 

@@ -1,13 +1,19 @@
-USER = totvs
-NAME = $(USER)/appserver
-VERSION = 17-02-07-700131227A
+USER = endersonmaia
+NAME = $(USER)/totvs-appserver
+VERSION = 17.3.0.8
 
-.PHONY: all build tag_latest release
-
+.PHONY: all
 all: build
 
+.PHONY: build
 build:
-	docker build -t $(NAME):$(VERSION) --rm .
+	docker image build -t $(NAME):$(VERSION) --rm .
 
+.PHONY: tag_latest
 tag_latest:
-	docker tag $(NAME):$(VERSION) $(NAME):latest
+	docker image tag $(NAME):$(VERSION) $(NAME):latest
+
+.PHONY: release
+release:
+	docker image push $(NAME):$(VERSION)
+	docker image push $(NAME):latest

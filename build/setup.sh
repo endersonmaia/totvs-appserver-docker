@@ -2,7 +2,7 @@
 set -e
 set -x
 
-TOTVS_PATH=/totvs12/microsiga
+TOTVS_PATH=/totvs12
 
 mkdir -p $TOTVS_PATH/protheus/{apo,bin/appserver}
 

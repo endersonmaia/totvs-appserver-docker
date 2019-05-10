@@ -5,12 +5,13 @@ services:
   appserver:
     build: .
     ports:
-      - 1234:1234
+      - 8081:8081
+      - 8080:8080
     user: root
     environment:
       - DBACCESS_SERVER=${DBACCESS_SERVER}
       - DBACCESS_ALIAS=${DBACCESS_ALIAS}
       - DBACCESS_PORT=${DBACCESS_PORT}
     volumes:
-      - ${PROTHEUS_DATA_PATH}:/totvs12/microsiga/protheus_data
-      - ${PROTHEUS_APO_PATH}:/totvs12/microsiga/protheus/apo
+      - ${PROTHEUS_DATA_PATH}:/totvs12/protheus_data
+      - ${PROTHEUS_APO_PATH}:/totvs12/protheus/apo

@@ -1,6 +1,6 @@
 USER = endersonmaia
 NAME = $(USER)/totvs-appserver
-VERSION = 17.3.0.8
+VERSION = 17.3.0.13
 
 .PHONY: all
 all: build
